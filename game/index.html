@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Twin Tides — Spot the Difference</title>
+<link rel="stylesheet" href="styles.css">
+<script type="module" src="src/main.js"></script>
+</head>
+<body>
+<div class="shell">
+  <header class="hud">
+    <div class="brand">
+      <div class="brand-title">🌊 Twin Tides</div>
+      <div class="brand-sub" id="level-name">Sunny Harbor — Level 1 of 5</div>
+      <div class="brand-tag" id="level-tag">Gulls over the fishing boats.</div>
+    </div>
+    <div class="timer-box">
+      <div class="time-row"><span id="time-text">120s</span><span class="time-label">left</span></div>
+      <div class="time-track"><div class="time-bar" id="time-bar"></div></div>
+    </div>
+    <div class="hud-right">
+      <div class="left-pill" id="left-pill">🔍 5 left</div>
+      <div class="score-box"><span id="score-text">0 pts</span><span id="streak-text" class="streak"></span></div>
+      <div class="hud-btns">
+        <button id="hint-btn" type="button">💡 Hint (3)</button>
+        <button id="sound-btn" type="button">🔊 Sound</button>
+        <button id="menu-btn" type="button">☰ Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="panel" id="panel-a">
+      <span class="panel-tag">Picture A</span>
+      <img id="img-a" src="assets/level1.png" alt="Picture A — find the differences">
+      <div class="marks"></div>
+    </div>
+    <div class="vs">VS</div>
+    <div class="panel" id="panel-b">
+      <span class="panel-tag">Picture B</span>
+      <img id="img-b" src="assets/level1-b.png" alt="Picture B — find the differences">
+      <div class="marks"></div>
+    </div>
+  </main>
+
+  <section class="found-bar">
+    <div class="found-list" id="found-list"><span class="found-none">Nothing found yet — look closely…</span></div>
+    <div class="dots" id="dots" aria-label="Level progress"></div>
+  </section>
+
+  <footer class="foot">Click a difference on either picture · H hint (−10s) · R retry level · M sound · Esc menu · Wrong click −5s</footer>
+</div>
+
+<div class="overlay" id="menu-overlay">
+  <div class="card">
+    <h1>🌊 Twin Tides</h1>
+    <p class="tagline">Five hand-painted scenes. Thirty differences hiding in plain sight.</p>
+    <ul class="howto">
+      <li>🔍 Two pictures, side by side — nearly identical, never quite.</li>
+      <li>👆 Click a difference on either picture. Rings appear on both.</li>
+      <li>🔥 Streaks pay: 100 points a find, +25 for every find in a row.</li>
+      <li>💡 Stuck? A hint costs 10 seconds. A wrong click costs 5.</li>
+      <li>⭐ Beat the clock for a time bonus — 10 points a second left.</li>
+    </ul>
+    <p class="best" id="menu-best">No best score yet — dive in!</p>
+    <button class="big-btn" id="start-btn" type="button">▶ Start diving</button>
+    <div class="level-pick" id="level-pick"></div>
+  </div>
+</div>
+
+<div class="overlay hidden" id="level-overlay">
+  <div class="card">
+    <h1 id="level-stars">★★★</h1>
+    <p class="tagline" id="level-summary"></p>
+    <p class="found-all" id="level-found"></p>
+    <button class="big-btn" id="next-btn" type="button">Next level →</button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="over-overlay">
+  <div class="card">
+    <h1>⏰ Out of time</h1>
+    <p class="tagline" id="over-summary"></p>
+    <button class="big-btn" id="retry-btn" type="button">↻ Retry this level</button>
+  </div>
+</div>
+
+<div class="overlay hidden" id="win-overlay">
+  <div class="card">
+    <h1>🏆 You found them all!</h1>
+    <p class="tagline" id="win-score"></p>
+    <p class="best" id="win-best"></p>
+    <button class="big-btn" id="again-btn" type="button">↻ Play again</button>
+  </div>
+</div>
+</body>
+</html>
